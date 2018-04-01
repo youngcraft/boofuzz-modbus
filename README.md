@@ -9,6 +9,7 @@ I only write read_coil_memory packet protocol model.
 ## packet protocol list
 
 In modbus protocol specification.list some type of modbus (after list function_code)
+
 1. [OK] read_coil(x01) 
 2. read_discrete_inputs(0x02)
 3. read_hoding_registers(0x03)
@@ -37,18 +38,15 @@ default web ui : http://127.0.0.1:26000
 
 in cmd: python modbus.py 
 
-'''
+```
 [2018-04-01 06:00:58,785] Test Case: 180
 [2018-04-01 06:00:58,785]     Info: primitive name: "modbus_read_coil_memorys", type: Repeat, default value: 
 [2018-04-01 06:00:58,785]     Info: Test case 181 of 181 for this node. 180 of 181 overall.
 [2018-04-01 06:00:58,785]   Test Step: Fuzzing Node 'modbus_read_coil_memory'
 [2018-04-01 06:00:58,786]     Transmitting 212 bytes: 00 00 00 00 00 06 ff 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 01 00 00 00 00 b'\x00\x00\x00\x00\x00\x06\xff\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00'
+```
 
-
-
-
-'''
 enjoy your fuzzing ! 
 if you have some problem ,contact wechat 
 
-[我的微信](https://github.com/youngcraft/boofuzz-modbus/blob/master/misc/wechat_myself.jpg)
+![我的微信](https://github.com/youngcraft/boofuzz-modbus/blob/master/misc/wechat_myself.jpg)
