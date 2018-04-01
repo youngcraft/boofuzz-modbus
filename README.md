@@ -49,4 +49,4 @@ in cmd: python modbus.py
 enjoy your fuzzing ! 
 if you have some problem ,contact wechat 
 
-![我的微信](https://github.com/youngcraft/boofuzz-modbus/blob/master/misc/wechat_myself.jpg)
+![我的微信](https://github.com/youngcraft/boofuzz-modbus/blob/master/misc/wechatcode.png)
