@@ -11,7 +11,7 @@ I only write read_coil_memory packet protocol model.
 In modbus protocol specification.list some type of modbus (after list function_code)
 
 1. [OK] read_coil(x01) 
-2. read_discrete_inputs(0x02)
+2. [OK] read_discrete_inputs(0x02)
 3. read_hoding_registers(0x03)
 4. read_input_register(0x04)
 5. write_single_coil(0x05)
@@ -34,6 +34,7 @@ In modbus protocol specification.list some type of modbus (after list function_c
 # usage 
 
 modify target ip address : 127.0.0.1:502
+
 default web ui : http://127.0.0.1:26000
 
 in cmd: python modbus.py 
@@ -47,6 +48,4 @@ in cmd: python modbus.py
 ```
 
 enjoy your fuzzing ! 
-if you have some problem ,contact wechat 
-
-![我的微信](https://github.com/youngcraft/boofuzz-modbus/blob/master/misc/wechatcode.png)
+if you have some problem ,contact gmail:youngtala@gmail.com
