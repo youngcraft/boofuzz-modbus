@@ -26,3 +26,8 @@ logfile_level=logging.DEBUG
 ignore_connection_reset=False
 ignore_connection_aborted=False
 target=None
+
+
+#-------------------
+
+method = 1
