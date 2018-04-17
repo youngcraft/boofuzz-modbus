@@ -850,7 +850,7 @@ reading configuration and deploy
 def main_test():
 	import fuzz_config
 	test = dir( fuzz_method )
-	print fuzz_method
+	sess = session_create('127.0.0.1','502',)
 
 
 
