@@ -858,7 +858,7 @@ reading configuration and deploy
 def main_test():
 	c = session_create('127.0.0.1',502,'test')
 	read_coil(c)
-
+	
 def standard_test(ip,port):
 	c1 = session_create(ip,port)
 
