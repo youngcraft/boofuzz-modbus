@@ -770,7 +770,7 @@ def read_device_identification(session, repeat_reps=[1, 255], fuzz_method=fuzz_m
 	:param fuzz_method: fuzz type ,fuzz all type ,
 	:return: test
 
-class ModbusPDU2B0EReadDeviceIdentificationRequest(Packet):
+	class ModbusPDU2B0EReadDeviceIdentificationRequest(Packet):
     name = "Read Device Identification"
     fields_desc = [XByteField("funcCode", 0x2B),
                    XByteField("MEIType", 0x0E),
