@@ -3,6 +3,7 @@
 
 import sys
 from boofuzz import *
+from boofuzz import ifuzz_logger,FuzzLoggerText
 
 '''
 Modbus-TCP boofuzz python
@@ -70,9 +71,9 @@ function_code_handler = {
 import logging
 from logging.config import fileConfig
 
-# fileConfig('logging_config.ini')
-# mylogger = logging.getLogger()
-# logger = FuzzLogger(fuzz_loggers=[mylogger])
+fileConfig('logging_config.ini')
+mylogger = logging.getLogger('root')
+logger = FuzzLogger(fuzz_loggers=[mylogger])
 
 
 modbus_fuzzer_method = {
@@ -83,25 +84,30 @@ modbus_fuzzer_method = {
 import fuzz_config as config
 
 def session_create(target_ip, target_port, func_name):
-	
+	import logging
 	target = Target( connection=SocketConnection( target_ip, target_port, proto='tcp' ) )
 	# func_logger = logging.basicConfig(
 	#
 	# )
 	
-	# logging.basicConfig( level=logging.DEBUG,
-	#                      format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
-	#                      datefmt='%a, %d %b %Y %H:%M:%S', filename=func_name+'.log', filemode='w' )
-	# app_logger = logging.getlogger(func_name)
-	session = Session(
+	logging.basicConfig( level=logging.DEBUG,
+	                      format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+	                      datefmt='%a, %d %b %Y %H:%M:%S', filename=func_name+'.log', filemode='w' )
+	mylogger = logging.getLogger('root')
+	f = open('root.log','w+')
+	app_logger = FuzzLogger(fuzz_loggers=[FuzzLoggerText(f),FuzzLoggerText()])
+	print func_name +'.log'
+	return Session(
 	    target= target,
 		skip = config.skip,
 		sleep_time=config.sleep_time,
 		restart_interval=config.restart_interval,
 		restart_sleep_time=config.restart_sleep_time,
 		crash_threshold=config.crash_threshold,
-		fuzz_data_logger=config.fuzz_data_logger,
-		logfile=func_name +'.log'
+		fuzz_data_logger=app_logger,
+		logfile=func_name +'.log',
+		log_level = logging.DEBUG,
+		logfile_level = logging.DEBUG
 	)
 
 '''
@@ -139,6 +145,8 @@ def read_coil(session, repeat_reps=[1,255], fuzz_method=fuzz_method['fuzz_all_bl
 	s_repeat("modbus_head",min_reps=repeat_reps[0],max_reps=repeat_reps[1])
 	session.connect( s_get( "modbus_read_coil" ) )
 	session.fuzz()
+	
+	
 	
 def read_discrete_inputs(session, repeat_reps=[1,255], fuzz_method=fuzz_method['fuzz_all_block']):
 	'''
@@ -848,11 +856,11 @@ reading configuration and deploy
 
 '''
 def main_test():
-	import fuzz_config
-	test = dir( fuzz_method )
-	print fuzz_method
+	c = session_create('127.0.0.1',502,'test')
+	read_coil(c)
 
-
+def standard_test(ip,port):
+	c1 = session_create(ip,port)
 
 def main_loop():
 	'''
