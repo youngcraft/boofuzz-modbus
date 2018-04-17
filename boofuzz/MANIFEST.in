@@ -1,0 +1,21 @@
+include *.py
+include *.rst
+include *.txt
+recursive-include boofuzz *.md
+recursive-include boofuzz *.py
+recursive-include examples *.py
+recursive-include examples *.md
+recursive-include requests *.html
+recursive-include requests *.py
+recursive-include unit_tests *.feature
+recursive-include unit_tests *.py
+recursive-include utils *.py
+include tox.ini
+
+recursive-include docs *.bat
+recursive-include docs *.py
+recursive-include docs *.rst
+recursive-include docs Makefile
+
+recursive-include _static *.png
+recursive-include docs *.png
