@@ -836,12 +836,12 @@ def reserved_function_Code(session, repeat_reps=[1, 255], fuzz_method=fuzz_metho
 	
 	s_initialize( 'reserved_function_Code' )
 	if s_block_start( "modbus_head" ):
-		s_word( 0x0001, name='transId', fuzzable=False )
-		s_word( 0x0000, name='protoId', fuzzable=False )
-		s_word( 0x06, name='length' )
-		s_byte( 0xff, name='unit Identifier', fuzzable=False )
+		s_word( 0x0001, name='transId', fuzzable=False ,endian='>')
+		s_word( 0x0000, name='protoId', fuzzable=False ,endian='>')
+		s_word( 0x06, name='length',endian='>')
+		s_byte( 0xff, name='unit Identifier', fuzzable=False,endian='>')
 		if s_block_start( 'pdu' ):
-			s_byte( 0x2b, name='reserved_function_Code', fuzzable=False )
+			s_byte( 0x2b, name='reserved_function_Code', fuzzable=False,endian='>')
 			s_string('a'*255)
 		s_block_end( 'pdu' )
 	s_block_end( "modbus_head" )
